@@ -44,29 +44,28 @@
 */
 
 struct Data {
-    method: String,
-    endpoint: String,
-    host: String,
-    token: u64
-};
+    token: u64,
+    method: &str,
+    endpoint: &str,
+    host: &str,
+}
 
 struct CachedData {
-    user_id: String,
-    pos: Int,
+    user_id: &str,
     data: Data,
+    pos: u64,
     next: u32,
     prev: u32
-};
+}
 
-let cache_map: [CachedData; 100] = [CachedData; 100];
-
-let lookup_cache: [CachedData; 100] = [CachedData; 100];
+static cache_map: [CachedData; 100] = [CachedData; 100];
+static lookup_cache: [CachedData; 100] = [CachedData; 100];
 
 
 fn cache_loader(UncachedData data) {
 
-};
+}
 
 fn cache_accesor(CachedData data) {
 
-};
+}

@@ -1,7 +1,10 @@
+mod parser;
+mod cache;
+
 fn main() {
     println!("Hello, world!");
     
-    let raw_http_traffic: str = r#"
+    let raw_http_traffic: &str = r#"
         GET /api/users HTTP/1.1
         Host: localhost:8080
         Authorization: Bearer valid_token_123
@@ -22,6 +25,7 @@ fn main() {
         "#;
         
     
-    const parsed_logs: str = logs_parser(raw_http_traffic);    
+    let parsed_logs: &str = parser::logs_parser(raw_http_traffic);    
+    println!("{parsed_logs}");
     
 }
